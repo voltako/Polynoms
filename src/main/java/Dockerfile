@@ -1,9 +1,10 @@
-FROM openjdk
+FROM openjdk:17-alpine
 
 WORKDIR /app
 
-COPY ../../.. /app
+COPY . .
 
-RUN javac PolynomsApp.java
+RUN  javac PolynomsApp.java
 
-CMD ["java", "PolynomsApp"]
+ENTRYPOINT ["java","PolynomsApp"]
+
